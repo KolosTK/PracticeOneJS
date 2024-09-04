@@ -1,91 +1,91 @@
-function add(a, b) {
+function add(a: number, b: number): number {
     return a + b;
 }
 
-function subtract(a, b) {
+function subtract(a: number, b: number): number {
     return a - b;
 }
 
-function multiply(a, b) {
+function multiply(a: number, b: number): number {
     return a * b;
 }
 
-function divide(a, b) {
+function divide(a: number, b: number): number | null {
     if (b === 0) {
         return null;
     }
     return a / b;
 }
 
-function isEven(num) {
+function isEven(num: number): boolean {
     return num % 2 === 0;
 }
 
-function isOdd(num) {
+function isOdd(num: number): boolean {
     return num % 2 !== 0;
 }
 
-function max(a, b) {
+function max(a: number, b: number): number {
     if (a > b) {
         return a;
     }
     return b;
 }
 
-function min(a, b) {
+function min(a: number, b: number): number {
     if (a < b) {
         return a;
     }
     return b;
 }
 
-function factorial(n) {
+function factorial(n: number): number {
     if (n === 0 || n === 1) {
         return 1;
     }
-    var result = 1;
-    for (var i = 2; i <= n; i++) {
+    var result: number = 1;
+    for (var i: number = 2; i <= n; i++) {
         result *= i;
     }
     return result;
 }
 
-function greet(name) {
+function greet(name: string): string {
     return "Hello, " + name + "!";
 }
 
-function repeatString(str, times) {
-    var result = "";
-    for (var i = 0; i < times; i++) {
+function repeatString(str: string, times: number): string {
+    var result: string = "";
+    for (var i: number = 0; i < times; i++) {
         result += str;
     }
     return result;
 }
 
-function toUpperCase(str) {
+function toUpperCase(str: string): string {
     return str.toUpperCase();
 }
 
-function toLowerCase(str) {
+function toLowerCase(str: string): string {
     return str.toLowerCase();
 }
 
-function reverseString(str) {
-    var result = "";
-    for (var i = str.length - 1; i >= 0; i--) {
+function reverseString(str: string): string {
+    var result: string = "";
+    for (var i: number = str.length - 1; i >= 0; i--) {
         result += str[i];
     }
     return result;
 }
 
-function isPalindrome(str) {
-    var reversed = reverseString(str);
+function isPalindrome(str: string): boolean {
+    var reversed: string = reverseString(str);
     return str === reversed;
 }
 
-function findMaxInArray(arr) {
-    var max = arr[0];
-    for (var i = 1; i < arr.length; i++) {
+function findMaxInArray(arr: number[]): number {
+    var max: number = arr[0];
+    for (var i: number = 1; i < arr.length; i++) {
         if (arr[i] > max) {
             max = arr[i];
         }
@@ -93,9 +93,9 @@ function findMaxInArray(arr) {
     return max;
 }
 
-function findMinInArray(arr) {
-    var min = arr[0];
-    for (var i = 1; i < arr.length; i++) {
+function findMinInArray(arr: number[]): number {
+    var min: number = arr[0];
+    for (var i: number = 1; i < arr.length; i++) {
         if (arr[i] < min) {
             min = arr[i];
         }
@@ -103,24 +103,24 @@ function findMinInArray(arr) {
     return min;
 }
 
-function sumArray(arr) {
-    var sum = 0;
-    for (var i = 0; i < arr.length; i++) {
+function sumArray(arr: number[]): number {
+    var sum: number = 0;
+    for (var i: number = 0; i < arr.length; i++) {
         sum += arr[i];
     }
     return sum;
 }
 
-function averageArray(arr) {
-    var sum = sumArray(arr);
+function averageArray(arr: number[]): number {
+    var sum: number = sumArray(arr);
     return sum / arr.length;
 }
 
-function isPrime(num) {
+function isPrime(num: number): boolean {
     if (num <= 1) {
         return false;
     }
-    for (var i = 2; i < num; i++) {
+    for (var i: number = 2; i < num; i++) {
         if (num % i === 0) {
             return false;
         }
@@ -128,9 +128,9 @@ function isPrime(num) {
     return true;
 }
 
-function countPrimesUpTo(n) {
-    var count = 0;
-    for (var i = 2; i <= n; i++) {
+function countPrimesUpTo(n: number): number {
+    var count: number = 0;
+    for (var i: number = 2; i <= n; i++) {
         if (isPrime(i)) {
             count++;
         }
@@ -138,53 +138,53 @@ function countPrimesUpTo(n) {
     return count;
 }
 
-function fibonacci(n) {
-    var sequence = [0, 1];
-    for (var i = 2; i < n; i++) {
+function fibonacci(n: number): number[] {
+    var sequence: number[] = [0, 1];
+    for (var i: number = 2; i < n; i++) {
         sequence.push(sequence[i - 1] + sequence[i - 2]);
     }
     return sequence;
 }
 
-function convertToBoolean(value) {
+function convertToBoolean(value: any): boolean {
     return Boolean(value);
 }
 
-function negateBoolean(bool) {
+function negateBoolean(bool: boolean): boolean {
     return !bool;
 }
 
-function andBoolean(bool1, bool2) {
+function andBoolean(bool1: boolean, bool2: boolean): boolean {
     return bool1 && bool2;
 }
 
-function orBoolean(bool1, bool2) {
+function orBoolean(bool1: boolean, bool2: boolean): boolean {
     return bool1 || bool2;
 }
 
-function xorBoolean(bool1, bool2) {
+function xorBoolean(bool1: boolean, bool2: boolean): boolean {
     return (bool1 && !bool2) || (!bool1 && bool2);
 }
 
-function stringContains(str, substring) {
+function stringContains(str: string, substring: string): boolean {
     return str.indexOf(substring) !== -1;
 }
 
-function stringStartsWith(str, prefix) {
+function stringStartsWith(str: string, prefix: string): boolean {
     return str.indexOf(prefix) === 0;
 }
 
-function stringEndsWith(str, suffix) {
+function stringEndsWith(str: string, suffix: string): boolean {
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
 
-function replaceString(str, search, replacement) {
+function replaceString(str: string, search: string, replacement: string): string {
     return str.split(search).join(replacement);
 }
 
-function countOccurrences(str, substring) {
-    var count = 0;
-    var pos = str.indexOf(substring);
+function countOccurrences(str: string, substring: string): number {
+    var count: number = 0;
+    var pos: number = str.indexOf(substring);
     while (pos !== -1) {
         count++;
         pos = str.indexOf(substring, pos + 1);
@@ -192,83 +192,83 @@ function countOccurrences(str, substring) {
     return count;
 }
 
-function generateRandomNumber(min, max) {
+function generateRandomNumber(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function isPositive(num) {
+function isPositive(num: number): boolean {
     return num > 0;
 }
 
-function isNegative(num) {
+function isNegative(num: number): boolean {
     return num < 0;
 }
 
-function absoluteValue(num) {
+function absoluteValue(num: number): number {
     if (num < 0) {
         return -num;
     }
     return num;
 }
 
-function roundNumber(num) {
+function roundNumber(num: number): number {
     return Math.round(num);
 }
 
-function floorNumber(num) {
+function floorNumber(num: number): number {
     return Math.floor(num);
 }
 
-function ceilNumber(num) {
+function ceilNumber(num: number): number {
     return Math.ceil(num);
 }
 
-function convertToString(value) {
+function convertToString(value: any): string {
     return String(value);
 }
 
-function convertToNumber(value) {
+function convertToNumber(value: any): number {
     return Number(value);
 }
 
-function convertToInteger(value) {
+function convertToInteger(value: any): number {
     return parseInt(value, 10);
 }
 
-function convertToFloat(value) {
+function convertToFloat(value: any): number {
     return parseFloat(value);
 }
 
-function isInteger(value) {
+function isInteger(value: any): boolean {
     return Number.isInteger(value);
 }
 
-function isFloat(value) {
+function isFloat(value: any): boolean {
     return value === +value && value !== (value | 0);
 }
 
-function trimString(str) {
+function trimString(str: string): string {
     return str.trim();
 }
 
-function padString(str, length, padChar) {
-    var result = str;
+function padString(str: string, length: number, padChar: string): string {
+    var result: string = str;
     while (result.length < length) {
         result = padChar + result;
     }
     return result;
 }
 
-function getSubstring(str, start, end) {
+function getSubstring(str: string, start: number, end: number): string {
     return str.slice(start, end);
 }
 
-function arrayContains(arr, value) {
+function arrayContains(arr: any[], value: any): boolean {
     return arr.indexOf(value) !== -1;
 }
 
-function arrayRemove(arr, value) {
-    var index = arr.indexOf(value);
+function arrayRemove(arr: any[], value: any): any[] {
+    var index: number = arr.indexOf(value);
     if (index !== -1) {
         arr.splice(index, 1);
     }
